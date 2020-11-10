@@ -13,6 +13,11 @@
     scrollToTop () {
       return true
     }
+
+    async beforeMount() {
+      const res = await this.$outpostService.getSortedPosts()
+      console.log(res)
+    }
   }
 </script>
 

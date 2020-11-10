@@ -36,6 +36,7 @@
     "normalize.css": "^8.0.1",
     "nuxt": "2.11.0",
     "nuxt-property-decorator": "2.5.0",
+    "outpost-sdk": "^1.0.3",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^8.0.0",

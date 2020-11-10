@@ -1,8 +1,10 @@
 import { Plugin } from '@nuxt/types'
 import EtherscanService from '~/services/EtherscanService'
+import OutpostService from '~/services/OutpostService'
 
 interface InterfaceTemplate {
   $etherscanService: EtherscanService
+  $outpostService: OutpostService
 }
 
 declare module 'vue/types/vue' {
@@ -25,6 +27,10 @@ const services: Plugin = ({ app, $moment, store}, inject) => {
     app.$axios
   )
   inject('etherscanService', etherscanService)
+  const outpostService = new OutpostService(
+    app.$axios
+  )
+  inject('outpostService', outpostService)
 }
 
 export default services
