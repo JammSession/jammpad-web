@@ -1,8 +1,5 @@
 # jammpad-web
 
-> JAMM Pad - Are you ready to $JAMM?
-<div style="text-align:center"><img src="https://jammpad.com/static/media/logo.f30ae447.png" /></div>
-
 ## Build Setup
 
 ``` bash
