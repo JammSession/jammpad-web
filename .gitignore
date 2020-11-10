@@ -1,0 +1,10 @@
+ngrok
+*.log
+.nuxt/
+node_modules/
+dist/
+.DS_Store
+*.retry
+package-lock.json
+sw.*
+yarn.lock
