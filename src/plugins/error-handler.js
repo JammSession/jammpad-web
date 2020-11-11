@@ -22,19 +22,6 @@ class ErrorHandler {
     }
     throw e
   }
-
-  _isBan(e) {
-    return e.code === 14 && e.message.startsWith('BAN ')
-  }
-
-  _isOldVersion(e) {
-    return e.code === 14 && e.message.startsWith('VERSION ')
-  }
-
-  _isExpired(e) {
-    // 判定にmessageも見る必要がある
-    return e.code === 16
-  }
 }
 
 export default ({ error, store }, inject) => {

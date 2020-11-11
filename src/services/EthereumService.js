@@ -94,7 +94,7 @@ export default class EthereumService {
       if (!accounts || !accounts[0]) return ''
       const account = accounts[0].toLowerCase()
       this.options.dev &&
-        console.info(`[mchplus.js] Current account is ${account}.`)
+        console.info(`Current account is ${account}.`)
       return account
     } catch (e) {
       console.error(`Error getting account: ${e}`)

@@ -15,7 +15,7 @@
     }
 
     async beforeMount() {
-      const res = await this.$outpostService.getSortedPosts()
+      const res = await this.$tokenService.getTokenInfo()
       console.log(res)
     }
   }
