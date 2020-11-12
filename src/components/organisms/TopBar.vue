@@ -7,16 +7,23 @@
       .topbar__unsupported(v-if="isUnsupportedNet") Unsupported Network
     nuxt-link.topbar__link(:to="'/'")
       img.topbar__logo(src="~assets/images/logo.png")
-    .topbar__wallet
-      button(
-        v-if="!hasWallet"
-        @click="sendToMetamask"
-      ) Install Wallet
-      button(
-        v-else-if="isWalletLocked"
-        @click="unlockWallet"
-      ) Connect Wallet
-      span(v-else) {{ shortenedAddress }}
+    .topbar__menu
+      a.topbar__menu__item(:href="outpostLink" target="_blank")
+        fa-icon(:icon="['fas', 'sticky-note']")
+        span Content
+      a.topbar__menu__item(:href="snapshotLink" target="_blank")
+        fa-icon(:icon="['fas', 'vote-yea']")
+        span Governance
+      .topbar__wallet
+        button(
+          v-if="!hasWallet"
+          @click="sendToMetamask"
+        ) Install Wallet
+        button(
+          v-else-if="isWalletLocked"
+          @click="unlockWallet"
+        ) Connect Wallet
+        span(v-else) {{ shortenedAddress }}
 </template>
 
 <script lang="ts">
@@ -55,6 +62,14 @@
       return `${this.ownAddress.substring(0, 5)}...${this.ownAddress.substring(this.ownAddress.length - 5, this.ownAddress.length)}`
     }
 
+    get outpostLink () {
+      return 'https://outpost-protocol.com/jamm'
+    }
+
+    get snapshotLink () {
+      return 'https://snapshot.page/#/jamm'
+    }
+
     async unlockWallet() {
       return await this.$ethereumService.unlockWallet()
     }
@@ -68,7 +83,7 @@
 <style lang="scss" scoped>
 .topbar {
   @extend %col;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   background-color: darken($color-shark, 1);
   /* border-bottom: 1px solid $color-meadow; */
   z-index: 999;
@@ -92,13 +107,13 @@
 
   &__content {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr auto;
     align-items: center;
     width: 100%;
-    max-width: $screen-max-width * 1.1;
-
+    max-width: $screen-max-width;
+    font-size: 0.9rem;
     @include breakpoint(sm) {
-      grid-template-columns: repeat(2, 1fr);
+      font-size: 1rem;
     }
   }
 
@@ -140,17 +155,33 @@
     }
   }
 
-  &__title {
-    font-weight: 300;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    @include breakpoint(sm) {
-      font-size: 1rem;
+  &__menu {
+    @extend %row;
+    &__item + &__item {
+      margin-left: 1rem;
+      @include breakpoint(sm) {
+        margin-left: 3rem;
+      }
+    }
+    &__item {
+      transition: 0.2s ease-in-out;
+
+      svg { 
+        margin-right: 0.5rem;
+      }
+
+      &:hover {
+        color: $color-jammGreen;
+      }
     }
   }
 
   &__wallet {
-    margin-left: auto;
+    margin-left: 2rem;
+
+    @include breakpoint(sm) {
+      margin-left: 6rem;
+    }
     button {
       @extend %btn-primary--small;
       @extend %btn-primary--gray;
@@ -158,7 +189,6 @@
 
     span {
       color: rgba($color-swan, 0.9);
-      font-size: 0.9rem;
     }
   }
 }

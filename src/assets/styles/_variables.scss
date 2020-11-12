@@ -73,7 +73,12 @@ $colors: (
   maroonflush:  #C0265A,
   brinkpink:    #F86596,
   brightsun:    #FFDD3E,
-  koromiko:     #FFBC5C
+  koromiko:     #FFBC5C,
+
+  // Jammpad colors
+  jammMetal: #141514,
+  jammGreen: #C1ECAE,
+  jammSmoke: #2e2e2e,
 );
 
 $color-primary: #14a5c2;
@@ -81,7 +86,7 @@ $color-primary-text: #303133;
 $color-regular-text: map-get($colors, swan);
 $color-secondary-text: #909399;
 $color-placeholder-text: #C0C4CC;
-$color-main-background: map-get($colors, shark);
+$color-main-background: map-get($colors, jammMetal);
 $color-base-border: #DCDFE6;
 $color-light-border: #E4E7ED;
 $color-lighter-border: #EBEEF5;
@@ -117,6 +122,10 @@ $color-brinkpink: map-get($colors, brinkpink);
 $color-brightsun: map-get($colors, brightsun);
 $color-koromiko: map-get($colors, koromiko);
 
+$color-jammMetal: map-get($colors, jammMetal);
+$color-jammGreen: map-get($colors, jammGreen);
+$color-jammSmoke: map-get($colors, jammSmoke);
+
 // convenience
 %row {
   display: flex;
@@ -135,10 +144,10 @@ $color-koromiko: map-get($colors, koromiko);
 %btn-primary {
   @extend %row;
   border: none;
-  color: $color-shark;
+  color: $color-jammMetal;
   font-weight: 450;
-  background-color: $color-koromiko;
-  border-radius: 0.25rem;
+  background-color: $color-jammGreen;
+  border-radius: 0.5rem;
   padding: 0.6rem 1.25rem;
   transition: 0.1s ease-in-out;
   outline: none;
@@ -157,13 +166,13 @@ $color-koromiko: map-get($colors, koromiko);
 
   &:hover {
     cursor: pointer;
-    background-color: lighten($color-koromiko, 5);
-    color: $color-shark;
+    background-color: lighten($color-jammGreen, 5);
+    color: $color-jammMetal;
   }
 
   &:disabled {
     opacity: 0.8;
-    background-color: rgba($color-koromiko, 0.5);
+    background-color: rgba($color-jammGreen, 0.5);
     cursor: default;
   }
 }
@@ -195,11 +204,11 @@ $color-koromiko: map-get($colors, koromiko);
 %btn-secondary {
   @extend %row;
   border: none;
-  color: $color-koromiko;
+  color: $color-jammGreen;
   font-weight: 450;
   background-color: transparent;
-  border: 1px solid $color-koromiko;
-  border-radius: 0.25rem;
+  border: 1px solid $color-jammGreen;
+  border-radius: 0.5rem;
   padding: 0.6rem 1.25rem;
   outline: none;
   transition: 0.1s ease-in-out;
@@ -218,14 +227,14 @@ $color-koromiko: map-get($colors, koromiko);
 
   &:hover {
     cursor: pointer;
-    color: lighten($color-koromiko, 5);
-    border-color: lighten($color-koromiko, 5);
+    color: lighten($color-jammGreen, 5);
+    border-color: lighten($color-jammGreen, 5);
   }
 
   &:disabled {
     opacity: 0.8;
-    border-color: darken($color-koromiko, 5);
-    color: darken($color-koromiko, 5);
+    border-color: darken($color-jammGreen, 5);
+    color: darken($color-jammGreen, 5);
     cursor: default;
   }
 }

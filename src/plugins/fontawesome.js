@@ -3,7 +3,9 @@ import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // fas
+import { faStickyNote } from '@fortawesome/free-solid-svg-icons/faStickyNote'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons/faSpinner'
+import { faVoteYea } from '@fortawesome/free-solid-svg-icons/faVoteYea'
 
 // fab
 import { faDiscord } from '@fortawesome/free-brands-svg-icons/faDiscord'
@@ -18,7 +20,9 @@ import { faTelegram} from '@fortawesome/free-brands-svg-icons/faTelegram'
 config.autoAddCss = false
 
 library.add(
+  faStickyNote,
   faSpinner,
+  faVoteYea,
   faDiscord,
   faMedium,
   faEthereum,

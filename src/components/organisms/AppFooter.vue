@@ -3,7 +3,7 @@ footer.appFooter(:class="{ 'appFooter--fixedButton': isFixedButtonShown }")
   .appFooter__content
     p.appFooter__brand
       small &copy; {{ `${$moment().format('YYYY')}` }}
-      span $JAMM
+      span JAMM
     ul.appFooter__links.footerLinks
       li
         a(:href="discordLink" target="_blank")
@@ -42,6 +42,7 @@ export default {
   font-size: 0.6rem;
   text-align: center;
   width: 100%;
+  padding: 0 1rem;
 
   @include breakpoint(sm) {
     font-size: 0.75rem;
@@ -51,9 +52,8 @@ export default {
   &__content {
     @extend %row;
     justify-content: space-between;
-
     width: 100%;
-    max-width: $screen-max-width * 1.1;
+    max-width: $screen-max-width;
   }
 
   &__brand {
