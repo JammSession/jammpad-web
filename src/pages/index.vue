@@ -40,16 +40,16 @@
     get jammParticipationOptions() {
       return [
         {
-          imgName: 'outpost.png',
-          title: 'Content',
-          value: '500 JAMM',
-          link: 'https://outpost-protocol.com/jamm'
-        },
-        {
           imgName: 'discord.png',
           title: 'Discord',
           value: '1000 JAMM',
           link: 'https://discord.gg/wZnHNaY8BV'
+        },
+        {
+          imgName: 'outpost.png',
+          title: 'Content',
+          value: '500 JAMM',
+          link: 'https://outpost-protocol.com/jamm'
         },
         {
           imgName: 'snapshot.png',
@@ -156,6 +156,7 @@
       img {
         height: 3rem;
         width: auto;
+        // filter: drop-shadow(0px 0px 10px rgba($color-jammGreen, 0.6));
         @include breakpoint(sm) {
           height: 5rem;
         }
@@ -177,8 +178,8 @@
 
       &:hover {
         @include breakpoint(sm) {
-          transform: translate(0.15rem, -0.25rem);
-          box-shadow: -0.15rem 0.25rem 0 rgba($color-jammGreen, 0.7);
+          transform: translate(0.25rem, -0.25rem);
+          box-shadow: -0.25rem 0.25rem 0 rgba($color-jammGreen, 1);
         }
       }
     }
