@@ -8,12 +8,12 @@
     nuxt-link.topbar__link(:to="'/'")
       img.topbar__logo(src="~assets/images/logo.png")
     .topbar__menu
-      a.topbar__menu__item(:href="outpostLink" target="_blank")
-        fa-icon(:icon="['fas', 'sticky-note']")
-        span Content
-      a.topbar__menu__item(:href="snapshotLink" target="_blank")
-        fa-icon(:icon="['fas', 'vote-yea']")
-        span Governance
+      //- a.topbar__menu__item(:href="outpostLink" target="_blank")
+      //-   fa-icon(:icon="['fas', 'sticky-note']")
+      //-   span Content
+      //- a.topbar__menu__item(:href="snapshotLink" target="_blank")
+      //-   fa-icon(:icon="['fas', 'vote-yea']")
+      //-   span Governance
       .topbar__wallet
         button(
           v-if="!hasWallet"

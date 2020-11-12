@@ -2,9 +2,9 @@
 .landing
   .landing__text 
     span JAMM 
-    span is a social token for crypto-natives, experimenting with tokenized community tools
+    span is finding the signal in the noise of tokenized communities.
 
-  .landing__description Participate by holding JAMM
+  .landing__description Get exclusive insights and join our experiments by holding JAMM
   .landing__buy Buy JAMM
   .landing__buy__price 
     span 1 JAMM
@@ -72,15 +72,15 @@
 .landing {
   &__text {
     text-align: center;
-    margin: 1rem 0 2rem;
-    font-size: 1.2rem;
+    margin: 1rem 0 1.5rem;
+    font-size: 1.4rem;
     padding: 0 2rem;
-    line-height: 1.6rem;
+    line-height: 1.8rem;
 
     @include breakpoint(sm) {
-      font-size: 1.4rem;
-      line-height: 1.8rem;
-      margin: 2.5rem 0 4rem;
+      font-size: 2.2rem;
+      line-height: 3rem;
+      margin: 2.5rem 0 3rem;
     }
 
     span {
@@ -92,21 +92,22 @@
   }
 
   &__description {
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     opacity: 0.8;
     text-align: center;
     font-weight: 300;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    padding: 0 2rem;
     @include breakpoint(sm) {
-      margin-top: 3rem;
-      font-size: 1rem;
+      margin-top: 1rem;
+      font-size: 1.2rem;
     }
   }
 
   &__buy {
     @extend %btn-primary;
     width: 5rem;
-    margin: 1.5rem auto 0rem;
+    margin: 2rem auto 0rem;
 
     &__price {
       margin: 0.5rem 0;
@@ -133,6 +134,7 @@
   &__participate {
     margin-top: 1.5rem;
     display: grid;
+    padding: 1rem;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem 2rem;
     cursor: pointer;
