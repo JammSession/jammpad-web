@@ -3,8 +3,11 @@ import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // fas
+import { faExternalLinkSquareAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkSquareAlt'
+import { faGem } from '@fortawesome/free-solid-svg-icons/faGem'
 import { faStickyNote } from '@fortawesome/free-solid-svg-icons/faStickyNote'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons/faSpinner'
+import { faLock } from '@fortawesome/free-solid-svg-icons/faLock'
 import { faVoteYea } from '@fortawesome/free-solid-svg-icons/faVoteYea'
 
 // fab
@@ -20,8 +23,11 @@ import { faTelegram} from '@fortawesome/free-brands-svg-icons/faTelegram'
 config.autoAddCss = false
 
 library.add(
+  faExternalLinkSquareAlt,
+  faGem,
   faStickyNote,
   faSpinner,
+  faLock,
   faVoteYea,
   faDiscord,
   faMedium,

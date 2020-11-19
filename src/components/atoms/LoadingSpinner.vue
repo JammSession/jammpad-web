@@ -16,7 +16,7 @@
   display: inline-block;
   box-sizing: border-box;
   border: 2px solid $color-main-background;
-  border-left-color: $color-koromiko;
+  border-left-color: $color-jammGreen;
   border-radius: 50%;
   height: 100%;
   width: 100%;

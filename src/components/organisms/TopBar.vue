@@ -88,7 +88,6 @@
   /* border-bottom: 1px solid $color-meadow; */
   z-index: 999;
   @include breakpoint(sm) {
-    padding: 0.5rem 0;
     box-shadow: 0 2px 4px rgba($color-woodsmoke, 0.6);
   }
 

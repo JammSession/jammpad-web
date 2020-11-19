@@ -4,12 +4,14 @@
     span JAMM 
     span is finding the signal in the noise of tokenized communities.
 
-  .landing__description Get exclusive insights and join our experiments by holding JAMM
-  .landing__buy Buy JAMM
+  .landing__description 
+    span Hold JAMM 
+    span to get access to exclusive insights and experiments.
+  .landing__buy Join JAMM
   .landing__buy__price 
     span 1 JAMM
     span =
-    span $0.19
+    span ${{jammPrice}}
   .landing__participate
     a.landing__participate__container(
       v-for="options in jammParticipationOptions"
@@ -19,23 +21,37 @@
       img(:src="require(`~/assets/images/${options.imgName}`)")
       .landing__participate__container__title {{ options.title }}
       .landing__participate__container__value {{ options.value }}
+  .landing__main
+    section.landing__full-width
+      .landing__headline Latest Content
+      content-links
+    section.landing__full-width
+      .landing__headline JAMM Governance
+      treasury(:jammPrice="jammPrice")
 </template>
 
 <script lang="ts">
   import { Component, Vue, State } from 'nuxt-property-decorator'
+  import ContentLinks from '~/components/molecules/ContentLinks.vue'
+  import Treasury from '~/components/molecules/Treasury.vue'
 
 @Component({
-  components: {}
+  components: {
+    ContentLinks,
+    Treasury
+  }
 })
   export default class extends Vue {
     scrollToTop () {
       return true
     }
 
+    private jammPrice = 0;
+
     async beforeMount() {
-      const res = await this.$tokenService.getTokenInfo()
-      console.log(res)
+      this.jammPrice = (await this.$tokenService.getTokenInfo()).usd
     }
+
 
     get jammParticipationOptions() {
       return [
@@ -70,6 +86,9 @@
 
 <style lang="scss" scoped>
 .landing {
+  &__full-width {
+    width: 100%;
+  }
   &__text {
     text-align: center;
     margin: 1rem 0 1.5rem;
@@ -102,6 +121,24 @@
       margin-top: 1rem;
       font-size: 1.2rem;
     }
+
+    span { 
+      &:first-of-type {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__headline {
+    font-weight: 500;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+    // color: $color-jammGreen;
+    @include breakpoint(sm) {
+      font-size: 1.2rem;
+      padding: 2rem;
+    }
   }
 
   &__buy {
@@ -131,16 +168,27 @@
     }
   }
 
-  &__participate {
-    margin-top: 1.5rem;
+  &__main {
     display: grid;
-    padding: 1rem;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    justify-items: center;
+    @include breakpoint(sm) {
+      margin: 0 auto;
+      max-width: 40rem;
+      grid-gap: 2rem;
+    }
+  }
+
+  &__participate {
+    margin: 2rem 0 1rem;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem 2rem;
+    grid-gap: 1rem;
     cursor: pointer;
 
     @include breakpoint(sm) {
-      margin-top: 3rem;
+      margin: 5rem 0 4rem;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 2rem;
     }

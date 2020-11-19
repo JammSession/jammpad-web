@@ -7,6 +7,14 @@ export default class OutpostService {
     this.posts = [] // todo: put this into the store
   }
 
+  get link() {
+    return 'https://outpost-protocol.com/jamm'
+  }
+
+  articleLink(id) {
+    return `https://outpost-protocol.com/jamm/post/${id}`
+  }
+
   // get all JAMM posts, in timestamp order
   async getSortedPosts() {
     const postArray = await this.client.getPosts({
