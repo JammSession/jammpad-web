@@ -147,7 +147,7 @@
   }
   &__all-btn {
     @extend %btn-secondary;
-    margin: 1rem 0;
+    margin-top: 1rem;
     svg {
       padding-top: 0.05rem;
     }

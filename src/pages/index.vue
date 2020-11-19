@@ -171,7 +171,7 @@
   &__main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     justify-items: center;
     @include breakpoint(sm) {
       margin: 0 auto;
