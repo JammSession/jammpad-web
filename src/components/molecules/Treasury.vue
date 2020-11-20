@@ -6,8 +6,8 @@ a.treasury(:href="treasuryLink")
         fa-icon(:icon="['fas', 'gem']")
         span JAMM Treasury
       .treasury__amount
-        .treasury__amount__jamm {{ treasuryBalance.toLocaleString() }} JAMM
-        .treasury__amount__usd ({{ (treasuryBalance * jammPrice).toLocaleString() }} USD )
+        .treasury__amount__jamm {{ Math.floor(treasuryBalance).toLocaleString() }} JAMM
+        .treasury__amount__usd ({{ (Math.floor(treasuryBalance * jammPrice)).toLocaleString() }} USD )
       fa-icon.treasury__link(:icon="['fas', 'external-link-square-alt']")
 
 </template>
@@ -37,6 +37,7 @@ a.treasury(:href="treasuryLink")
 .treasury {
   &__container {
     background-color: $color-jammSmoke;
+    border-radius: 0.25rem;
     @include breakpoint(sm) {
       &:hover {
         .treasury__header {

@@ -1,7 +1,7 @@
 <template <template lang="pug">
 .loading-spinner__wrapper 
   .loading-spinner
-  img(src="~/assets/images/logo--small.png")
+  //- img(src="~/assets/images/logo--small.png")
 </template>
 
 <script>
@@ -25,8 +25,9 @@
   &__wrapper {
     @extend %col;
     position: relative;
-    height: 4rem;
-    width: 4rem;
+    height: 2rem;
+    width: 2rem;
+    margin: 0 auto;
 
     img {
       height: 40%;

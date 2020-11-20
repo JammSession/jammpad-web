@@ -23,7 +23,8 @@
           v-else-if="isWalletLocked"
           @click="unlockWallet"
         ) Connect Wallet
-        span(v-else) {{ shortenedAddress }}
+        span(v-else) {{ (myJammBalance || 0).toLocaleString() }} JAMM
+      //- a.topbar__buy(:href="uniswapLink" target="_blank") Buy JAMM
 </template>
 
 <script lang="ts">
@@ -37,6 +38,7 @@
     @State ownAddress
     @State networkId
     @State finishedInit
+    @State myJammBalance
 
     get hasWallet () {
       return this.$ethereumService.hasWallet
@@ -187,8 +189,21 @@
     }
 
     span {
-      color: rgba($color-swan, 0.9);
+      background-color: rgba($color-swan, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      color: $color-jammGreen;
+      font-weight: 500;
+
+      @include breakpoint(sm) {
+        padding: 0.4rem 0.75rem;
+      }
     }
+  }
+
+  &__buy {
+    @extend %btn-primary--small;
+    font-size: 0.8rem;
   }
 }
 </style>

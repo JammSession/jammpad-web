@@ -65,7 +65,7 @@
 }
 
 .footer {
-  height: 6rem;
+  height: 4rem;
   position: absolute;
   bottom: 0;
   width: 100%;

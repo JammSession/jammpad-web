@@ -7,7 +7,7 @@
   .landing__description 
     span Hold JAMM 
     span to get access to exclusive insights and experiments.
-  a.landing__buy(:href="uniswapLink" target="_blank") Get JAMM
+  a.landing__buy(:href="uniswapLink" target="_blank") Buy JAMM
   .landing__buy__price 
     span 1 JAMM
     span =
@@ -137,7 +137,7 @@
 
   &__headline {
     font-weight: 500;
-    padding: 1rem;
+    padding: 2rem 0 1rem;
     text-align: center;
     font-size: 1.1rem;
     // color: $color-jammGreen;

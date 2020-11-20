@@ -8,6 +8,7 @@ export const state = () => ({
   didStartInit: false,
   finishedInit: false,
   authStoppedAt: '',
+  myJammBalance: 0
 })
 
 export const mutations = {
@@ -31,6 +32,9 @@ export const mutations = {
   },
   SET_ERROR_MESSAGE_FOR_DEV(state, error) {
     state.error = error
+  },
+  SET_OWN_JAMM_BALANCE(state, balance) {
+    state.myJammBalance = balance
   }
 }
 
@@ -65,6 +69,7 @@ export const actions = {
     await commit('FINISH_INIT', false)
     try {
       await dispatch('setWeb3')
+      await dispatch('getMyJammBalance')
       // load more init functions here
     } catch (e) {
       await commit('SET_NEXT_AUTH_STEP', NEXT_AUTH_STEPS[3])
@@ -79,6 +84,15 @@ export const actions = {
       const networkId = await this.$ethereumService.getNetworkIdAsync()
       await commit('SET_OWN_ADDRESS', address)
       await commit('SET_NETWORK_ID', networkId)
+    } catch (e) {
+      console.error(e)
+    }
+  },
+
+  async getMyJammBalance({ commit, state }, _context) { 
+    try {
+      const balance = await this.$tokenService.getTokenValueByAddress(state.ownAddress)
+      await commit('SET_OWN_JAMM_BALANCE', balance)
     } catch (e) {
       console.error(e)
     }

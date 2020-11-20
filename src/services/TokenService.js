@@ -56,7 +56,11 @@ export default class TokenService {
   }
 
   async getTreasuryBalance() {
-    const balance = (await this.fetch(`https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=${this.jammContractAddress}&address=${this.treasuryAddress}&tag=latest&apikey=${ETHERSCAN_API}`)).result
+    return this.getTokenValueByAddress(this.treasuryAddress)
+  }
+
+  async getTokenValueByAddress(address) {
+    const balance = (await this.fetch(`https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=${this.jammContractAddress}&address=${address}&tag=latest&apikey=${ETHERSCAN_API}`)).result
     return Number(balance) / 10 ** this.JammDecimals
   }
 
