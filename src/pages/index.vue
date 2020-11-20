@@ -7,7 +7,7 @@
   .landing__description 
     span Hold JAMM 
     span to get access to exclusive insights and experiments.
-  .landing__buy Join JAMM
+  a.landing__buy(:href="uniswapLink" target="_blank") Get JAMM
   .landing__buy__price 
     span 1 JAMM
     span =
@@ -28,16 +28,19 @@
     section.landing__full-width
       .landing__headline JAMM Governance
       treasury(:jammPrice="jammPrice")
+      snapshot-proposals.landing__proposals
 </template>
 
 <script lang="ts">
   import { Component, Vue, State } from 'nuxt-property-decorator'
   import ContentLinks from '~/components/molecules/ContentLinks.vue'
+  import SnapshotProposals from '~/components/molecules/SnapshotProposals.vue'
   import Treasury from '~/components/molecules/Treasury.vue'
 
 @Component({
   components: {
     ContentLinks,
+    SnapshotProposals,
     Treasury
   }
 })
@@ -52,6 +55,9 @@
       this.jammPrice = (await this.$tokenService.getTokenInfo()).usd
     }
 
+    get uniswapLink() {
+      return this.$tokenService.uniswapLink
+    }
 
     get jammParticipationOptions() {
       return [
@@ -204,7 +210,6 @@
       img {
         height: 3rem;
         width: auto;
-        // filter: drop-shadow(0px 0px 10px rgba($color-jammGreen, 0.6));
         @include breakpoint(sm) {
           height: 5rem;
         }
@@ -231,6 +236,9 @@
         }
       }
     }
+  }
+  &__proposals {
+    margin-top: 1rem;
   }
 }
 </style>

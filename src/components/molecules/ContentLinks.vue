@@ -61,16 +61,16 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
     grid-gap: 1rem;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem 1rem 1rem;
     background-color: $color-jammSmoke;
     border-radius: 0.25rem;
     transition: 0.2s ease-in-out;
 
     @include breakpoint(sm) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.2fr;
       grid-template-rows: 1fr;
-      grid-gap: 2rem;
-      padding: 1.5rem 2rem;
+      grid-gap: 1.5rem;
+      padding: 1.5rem 2rem 1.5rem 1.5rem;
     }
 
     &:hover {
@@ -116,9 +116,10 @@
 
     &__text {
       @extend %col;
+      align-items: flex-start;
       height: 100%;
       &__title {
-        font-weight: 400;
+        font-weight: 500;
         line-height: 1.3;
         font-size: 1.1rem;
         color: $color-jammGreen;
@@ -127,12 +128,14 @@
         padding-top: 0.5rem;
         font-weight: 300;
         line-height: 1.2;
+        font-size: 0.9rem;
       }
       &__footer {
         @extend %row;
         width: 100%;
         justify-content: space-between;
         margin-top: auto;
+        padding-top: 0.5rem;
         font-size: 0.8rem;
         opacity: 0.6;
 

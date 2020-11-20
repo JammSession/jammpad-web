@@ -29,6 +29,10 @@ export default class TokenService {
     return 4
   }
 
+  get uniswapLink() {
+    return `https://app.uniswap.org/#/swap?outputCurrency=${this.jammContractAddress}`
+  }
+
   async fetch (url) {
     let res = {}
     try {

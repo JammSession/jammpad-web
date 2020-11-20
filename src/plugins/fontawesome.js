@@ -5,9 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // fas
 import { faExternalLinkSquareAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkSquareAlt'
 import { faGem } from '@fortawesome/free-solid-svg-icons/faGem'
+import { faStop } from '@fortawesome/free-solid-svg-icons/faStop'
 import { faStickyNote } from '@fortawesome/free-solid-svg-icons/faStickyNote'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons/faSpinner'
 import { faLock } from '@fortawesome/free-solid-svg-icons/faLock'
+import { faPlay } from '@fortawesome/free-solid-svg-icons/faPlay'
 import { faVoteYea } from '@fortawesome/free-solid-svg-icons/faVoteYea'
 
 // fab
@@ -25,9 +27,11 @@ config.autoAddCss = false
 library.add(
   faExternalLinkSquareAlt,
   faGem,
+  faStop,
   faStickyNote,
   faSpinner,
   faLock,
+  faPlay,
   faVoteYea,
   faDiscord,
   faMedium,

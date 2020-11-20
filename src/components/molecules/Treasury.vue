@@ -1,6 +1,6 @@
 <template lang="pug">
 a.treasury(:href="treasuryLink")
-  .treasury__wrapper
+  .treasury__container
     .treasury__header
       .treasury__icon
         fa-icon(:icon="['fas', 'gem']")
@@ -34,28 +34,31 @@ a.treasury(:href="treasuryLink")
 </script>
 
 <style lang="scss" scoped>
-  .treasury {
-  &__wrapper {
+.treasury {
+  &__container {
     background-color: $color-jammSmoke;
-    border-radius: 0.25rem;
-    padding: 1rem 1.5rem;
-    &:hover {
-      .treasury__link {
-        opacity: 1;
+    @include breakpoint(sm) {
+      &:hover {
+        .treasury__header {
+          background-color: rgba($color-swan, 0.1);
+        }
       }
     }
   }
 
   &__header {
     display: grid;
+    border-radius: 0.25rem;
+    padding: 1rem 1.5rem;
     grid-gap: 1.5rem 0.5rem;
+    transition: 0.2s ease-in-out;
     grid-template-areas: 
       'trasuryIcon link'
       'amount amount';
     @include breakpoint(sm) {
       grid-template-columns: 1fr 1fr auto;
       grid-template-areas: 
-      'trasuryIcon amount amount link';
+      'trasuryIcon amount amount';
     }
   }
 
@@ -72,9 +75,12 @@ a.treasury(:href="treasuryLink")
   &__amount {
     grid-area: amount;
     @extend %row;
+    @include breakpoint(sm) {
+      justify-content: flex-end;
+    }
     &__jamm {
       font-weight: 500;
-      color: $color-jammGreen;
+      // color: $color-jammGreen;
     }
     &__usd {
       font-size: 0.8rem;
@@ -88,6 +94,9 @@ a.treasury(:href="treasuryLink")
     transition: 0.2s ease-in-out;
     opacity: 0.6;
     padding-left: 1.5rem;
+    @include breakpoint(sm) {
+      display: none;
+    }
   }
 }
 </style>

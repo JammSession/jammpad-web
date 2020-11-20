@@ -10,6 +10,10 @@ export default class SnapshotService {
   get spaceName() {
     return 'jamm'
   }
+  
+  get snapshotLink() {
+    return 'https://snapshot.page/#/jamm'
+  }
 
   async fetch (url) {
     let res = {}
@@ -27,7 +31,24 @@ export default class SnapshotService {
     return this.fetch(`${this.baseUrl}/spaces/${this.spaceName}`)
   }
 
+  voteLink(id) {
+    return `${this.snapshotLink}/proposal/${id}`
+  }
+
   async getAllProposals() {
-    return await this.fetch(`${this.baseUrl}/${this.spaceName}/proposals`) || {}
+    const proposals = await this.fetch(`${this.baseUrl}/${this.spaceName}/proposals`) || {}
+    return this.cleanAndSort(Object.values(proposals)) // convert obj to array
+  }
+
+  cleanAndSort(proposals) {
+    const cleaned = proposals.map(proposal => ({
+      timestamp: Number(proposal.msg.timestamp) * 1000,
+      title: proposal.msg.payload.name,
+      body: proposal.msg.payload.body,
+      end: proposal.msg.payload.end * 1000,
+      start: proposal.msg.payload.start * 1000,
+      id: proposal.authorIpfsHash
+    }))
+    return cleaned.sort((a, b) => b.timestamp - a.timestamp)
   }
 }

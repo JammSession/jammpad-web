@@ -3,9 +3,8 @@ const env = require('dotenv').config()
 const SITE_INFO = {
   title: 'Jamm Pad',
   googleFonts: [
-    'Barlow:400,300,400,500,700',
+    'Montserrat: 300,500',
     'Source+Code+Pro:200,300,400',
-    'Oswald:200,300,400,500,600,700&amp;subset=cyrillic,latin-ext,vietnamese'
   ]
 }
 
