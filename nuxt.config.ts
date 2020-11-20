@@ -28,7 +28,7 @@ export default {
         }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: 'faviconv1.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v=2' },
         {
           rel: 'stylesheet',
           href:
