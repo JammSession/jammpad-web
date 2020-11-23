@@ -29,7 +29,7 @@ export default {
       return 'https://twitter.com/JammSession_'
     },
     githubLink() {
-      return 'https://github.com'
+      return 'https://github.com/JammSession'
     },
   }
 }
