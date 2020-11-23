@@ -8,8 +8,8 @@
   )
     .contentLinks__content__hold 
       fa-icon(:icon="['fas', 'lock']")
-      span {{post.readRequirement}} JAMM
-    img.contentLinks__content__image(:src="post.featuredImg")
+      //- span {{post.readRequirement}} JAMM
+    img.contentLinks__content__image(:src="post.featuredImg || require('~/assets/images/content-placeholder.png')")
     .contentLinks__content__text
       section
         .contentLinks__content__text__title {{ post.title }}
@@ -19,7 +19,7 @@
         .contentLinks__content__text__footer__timestamp {{ $moment(post.timestamp * 1000).format('MMMM Do YYYY')}}
 
   a.contentLinks__all-btn(:href="outpostLink" target="_blank") 
-    span All Content
+    span View All Content
     fa-icon(:icon="['fas', 'external-link-square-alt']")
 </template>
 
@@ -38,6 +38,7 @@
     async beforeMount() {
       this.content = await this.$outpostService.getSortedPosts()
       this.loading = false
+      console.log(this.content)
     }
 
     get outpostLink () {
@@ -67,7 +68,7 @@
     transition: 0.2s ease-in-out;
 
     @include breakpoint(sm) {
-      grid-template-columns: 1fr 1.2fr;
+      grid-template-columns: 1fr 2fr;
       grid-template-rows: 1fr;
       grid-gap: 1.5rem;
       padding: 1.5rem 2rem 1.5rem 1.5rem;
@@ -103,7 +104,7 @@
       svg {
         font-size: 0.7rem;
         opacity: 0.8;
-        margin-right: 0.25rem;
+        margin: 0 0.25rem;
       }
     }
 

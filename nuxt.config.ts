@@ -1,7 +1,7 @@
 const env = require('dotenv').config()
 
 const SITE_INFO = {
-  title: 'Jamm Pad',
+  title: 'JAMM Pad - JAMM tokenized crypto community',
   googleFonts: [
     'Montserrat: 300,500',
     'Source+Code+Pro:200,300,400',
@@ -11,9 +11,10 @@ const SITE_INFO = {
 export default {
   env: env.parsed,
   dev: (process.env.NODE_ENV !== 'production'),
+  target: 'static',
   head: (() => {
     const head = {
-      title: 'JAMM Pad',
+      title: 'JAMM Pad - JAMM tokenized crypto community',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -24,7 +25,8 @@ export default {
         },
         {
           hid: 'og:image',
-          property: 'og:image'
+          property: 'og:image',
+          content: '/content-placeholder.png' 
         }
       ],
       link: [

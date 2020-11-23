@@ -19,7 +19,7 @@
           span {{ $moment().isBefore($moment(proposal.end)) ? 'Open' : 'Closed' }}
 
   a.snapshotProposals__all-btn(:href="snapshotLink" target="_blank") 
-    span All Proposals
+    span View All Governance Proposals
     fa-icon(:icon="['fas', 'external-link-square-alt']")
 </template>
 
@@ -72,7 +72,7 @@
     border-top: 1px solid rgba($color-jammMetal, 0.7);
 
     @include breakpoint(sm) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 1fr;
       grid-template-rows: 1fr;
       grid-gap: 1rem;
       padding: 1rem 1.5rem;
@@ -120,12 +120,15 @@
         overflow: hidden;
       }
       &__footer {
-        @extend %row;
         width: 100%;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr 0.5fr;
+        grid-gap: 1rem;
         font-size: 0.8rem;
         line-height: 0.8;
+        align-items: center;
         &__timestamp {
+          justify-self: start;
           span {
             opacity: 0.7;
           }

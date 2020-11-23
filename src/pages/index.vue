@@ -2,7 +2,7 @@
 .landing
   .landing__text 
     span JAMM 
-    span is finding the signal in the noise of tokenized communities.
+    span is a group of crypto-natives trying to find signal in the noise.
 
   .landing__description 
     span Hold JAMM 
@@ -23,7 +23,7 @@
       .landing__participate__container__value {{ options.value }}
   .landing__main
     section.landing__full-width
-      .landing__headline Latest Content
+      .landing__headline Latest Newsletters
       content-links
     section.landing__full-width
       .landing__headline JAMM Governance
@@ -82,7 +82,7 @@
         {
           imgName: 'twitter.png',
           title: 'Twitter',
-          value: 'Free',
+          value: '0',
           link: 'https://twitter.com/JammSession_'
         },
       ]
@@ -142,8 +142,8 @@
     font-size: 1.1rem;
     // color: $color-jammGreen;
     @include breakpoint(sm) {
-      font-size: 1.2rem;
-      padding: 2rem;
+      font-size: 1.4rem;
+      padding: 3rem 0 2rem;
     }
   }
 
@@ -181,7 +181,7 @@
     justify-items: center;
     @include breakpoint(sm) {
       margin: 0 auto;
-      max-width: 40rem;
+      max-width: 50rem;
       grid-gap: 2rem;
     }
   }
