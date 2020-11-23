@@ -5,7 +5,6 @@ import SnapshotService from '~/services/SnapshotService'
 import TokenService from '~/services/TokenService'
 
 interface InterfaceTemplate {
-  $etherscanService: EtherscanService
   $outpostService: OutpostService
   $snapshotService: SnapshotService
   $tokenService: TokenService
@@ -27,10 +26,6 @@ declare module 'vuex/types/index' {
 }
 
 const services: Plugin = ({ app, $moment, store}, inject) => {
-  const etherscanService = new EtherscanService(
-    app.$axios
-  )
-  inject('etherscanService', etherscanService)
   const outpostService = new OutpostService(
     app.$axios
   )

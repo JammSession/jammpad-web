@@ -9,10 +9,6 @@ export default class TokenService {
     return 'https://api.coingecko.com/api/v3'
   }
   
-  get etherscanApi() {
-    return 'https://hub.snapshot.page/api'
-  }
-  
   get treasuryLink() {
     return `https://gnosis-safe.io/app/#/safes/${this.treasuryAddress}/transactions`
   }

@@ -34,8 +34,10 @@ The page folder structure creates routes automatically, thanks to Nuxt. But this
 
 ### services
 Here are the API services and web3 API for Ethereum. For now it is:
-- EthereumService: All things web3
-... more to come
+- EthereumService: All things web3.
+- OutpostService: API for Outpost, the protocol that serves content.
+- SnapshotService: API for SNapshot, the protocol for governance.
+- TokenService: Coingecko API for JAMM price, Gnosis Safe link to Treasury, and Etherscan API to get Treasury $JAMM balance
 
 ### store
 This is the Vuex store, which works similar to Redux. The Action `nuxtClientInit` is called when a user opens the page. If you want to load data at startup, it should be called there.
