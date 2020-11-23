@@ -82,7 +82,7 @@
         {
           imgName: 'twitter.png',
           title: 'Twitter',
-          value: '0',
+          value: '0 JAMM',
           link: 'https://twitter.com/JammSession_'
         },
       ]
