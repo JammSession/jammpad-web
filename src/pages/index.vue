@@ -99,7 +99,6 @@
     text-align: center;
     margin: 1rem 0 1.5rem;
     font-size: 1.4rem;
-    padding: 0 2rem;
     line-height: 1.8rem;
 
     @include breakpoint(sm) {

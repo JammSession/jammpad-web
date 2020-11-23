@@ -81,6 +81,8 @@ a.treasury(:href="treasuryLink")
     }
     &__jamm {
       font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 1.4;
       // color: $color-jammGreen;
     }
     &__usd {
