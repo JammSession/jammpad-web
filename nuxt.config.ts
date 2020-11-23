@@ -27,7 +27,11 @@ export default {
           hid: 'og:image',
           property: 'og:image',
           content: '/content-placeholder.png' 
-        }
+        },
+        { hid: 'twitter:title', name: 'twitter:title', content: 'Jamm Pad - JAMM tokenized crypto community' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { hid: 'twitter:description', name: 'twitter:description', content: "Are you ready to $JAMM?" },
+        { name: 'twitter:image', content: `https://5fbb1dc1b3cc31a05133137d--confident-borg-262ef1.netlify.app/content-placeholder.png` }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v=2' },
